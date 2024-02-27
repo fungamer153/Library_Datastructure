@@ -6,9 +6,9 @@ public class Book {
     private int numPages;
     private int year;
     private int bookID = 1004824;
-    private Genres genre;
+    private Genres.genres genre;
 
-    public Book(String authorFN, String authorRN, String title, String publisher, int pages, int year, Genres bGenre){
+    public Book(String authorFN, String authorRN, String title, String publisher, int pages, int year, Genres.genres bGenre){
         this.authorFamilyName = authorFN;
         this.authorRestOfName = authorRN;
         this.title = title;
@@ -37,14 +37,14 @@ public class Book {
     }
 
     public String getCitation(){
-        if (this.genre == Genres.NON_FICTION) {
+        if (this.genre == Genres.genres.NON_FICTION) {
             return this.authorFamilyName
                     + ", " + this.authorRestOfName
                     + ". " + this.title
                     + ". " + this.publisher
                     + " " + this.year
                     + " " + this.numPages;
-        } else if (this.genre == Genres.SCIENCE_FICTION) {
+        } else if (this.genre == Genres.genres.SCIENCE_FICTION) {
             return this.authorFamilyName
                     + ", " + this.authorRestOfName
                     + ". " + this.title;

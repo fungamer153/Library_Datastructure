@@ -1,6 +1,6 @@
 public class BookUnitTest {
     public static void main(String[] args) {
-        Book newBook = new Book("test", "test", "test");
+        Book newBook = new Book("test", "test", "test", "hi", 2, 2001, Genres.genres.NON_FICTION);
         testConstructorAndGetters(newBook);
     }
 
