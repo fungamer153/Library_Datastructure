@@ -4,6 +4,7 @@ public class BookUnitTest {
         testConstructorAndGetters(newBook);
     }
 
+
     public static void testConstructorAndGetters(Book newBook){
         newBook.setTitle("Planetfall");
         newBook.setAuthorFamilyName("Emma");
