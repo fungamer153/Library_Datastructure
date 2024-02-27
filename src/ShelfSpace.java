@@ -15,9 +15,6 @@ public class ShelfSpace {
        return this.assignedBook;
    }
 
-   public ShelfSpace getLeftSpace(){
-       return shelfSpace;
-   }
 
    public ShelfSpace getRightSpace(){
        return shelfSpace;
