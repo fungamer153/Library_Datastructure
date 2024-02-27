@@ -5,22 +5,20 @@ public class Book {
     private String publisher;
     private int numPages;
     private int year;
-    private int bookID = 1004824;
-    private Genres.genres genre;
+    private Genre genre;
+    private int bookID;
+    private static int id = 1004825;
 
-    public Book(String authorFN, String authorRN, String title, String publisher, int pages, int year, Genres.genres bGenre){
+    public Book(String authorFN, String authorRN, String title, Genre genre){
         this.authorFamilyName = authorFN;
         this.authorRestOfName = authorRN;
         this.title = title;
         this.publisher = publisher;
-        this.numPages = pages;
-        this.year = year;
-        this.genre = bGenre;
-        this.bookID = bookID;
-        bookID++;
+        this.genre = genre;
+        this.bookID = id++;
     }
 
-    public String getAuthorFamilyName(){
+    public String getAuthorFamilyNames(){
         return authorFamilyName;
     }
 
@@ -28,6 +26,9 @@ public class Book {
         return authorRestOfName;
     }
 
+    public Genre getGenre(){
+        return this.genre;
+    }
     public String getTitle(){
         return title;
     }
@@ -36,22 +37,6 @@ public class Book {
         return this.bookID;
     }
 
-    public String getCitation(){
-        if (this.genre == Genres.genres.NON_FICTION) {
-            return this.authorFamilyName
-                    + ", " + this.authorRestOfName
-                    + ". " + this.title
-                    + ". " + this.publisher
-                    + " " + this.year
-                    + " " + this.numPages;
-        } else if (this.genre == Genres.genres.SCIENCE_FICTION) {
-            return this.authorFamilyName
-                    + ", " + this.authorRestOfName
-                    + ". " + this.title;
-        }
-
-        return "";
-    }
 
     public void setAuthorFamilyName(String authorFamilyName){
         this.authorFamilyName = authorFamilyName;
@@ -69,12 +54,14 @@ public class Book {
     public String toString() {
         return this.authorFamilyName
                 + this.authorRestOfName
-                + this.title;
+                + this.title
+                + this.genre
+                + this.bookID;
     }
 
     public String getShortString() {
-        return this.authorRestOfName
-                + this.authorFamilyName
+        return this.authorFamilyName
+                + this.authorRestOfName
                 + this.title;
     }
 }

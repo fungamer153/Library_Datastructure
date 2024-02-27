@@ -15,11 +15,6 @@ public class ShelfSpace {
        return this.assignedBook;
    }
 
-
-   public ShelfSpace getRightSpace(){
-       return shelfSpace;
-   }
-
    public void addLeft(Book book){
        this.leftEnd.add(book);
    }

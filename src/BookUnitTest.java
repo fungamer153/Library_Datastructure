@@ -1,9 +1,4 @@
 public class BookUnitTest {
-    public static void main(String[] args) {
-        Book newBook = new Book("test", "test", "test", "hi", 2, 2001, Genres.genres.NON_FICTION);
-        testConstructorAndGetters(newBook);
-    }
-
 
     public static void testConstructorAndGetters(Book newBook){
         newBook.setTitle("Planetfall");
@@ -11,7 +6,7 @@ public class BookUnitTest {
         newBook.setAuthorRestOfName("Newman");
         System.out.println(newBook.getBookID());
         System.out.println(newBook.getTitle());
-        System.out.println(newBook.getAuthorFamilyName());
+        System.out.println(newBook.getAuthorFamilyNames());
         System.out.println(newBook.getAuthorRestOfName());
     }
 
