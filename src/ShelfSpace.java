@@ -1,23 +1,22 @@
-
 public class ShelfSpace {
-    final private Book assignedBook;
+    private final Book book;
     private ShelfSpace leftSpace;
     private ShelfSpace rightSpace;
 
-   public ShelfSpace(Book book){
-       this.assignedBook = book;
-   }
+    public ShelfSpace(Book book) {
+        this.book = book;
+    }
 
-    public Book getThisBook() {
-        return assignedBook;
+    public Book getBook() {
+        return this.book;
     }
 
     public ShelfSpace getLeftSpace() {
-        return leftSpace;
+        return this.leftSpace;
     }
 
     public ShelfSpace getRightSpace() {
-        return rightSpace;
+        return this.rightSpace;
     }
 
     public void setLeftSpace(ShelfSpace leftSpace) {
@@ -30,6 +29,6 @@ public class ShelfSpace {
 
     @Override
     public String toString() {
-        return this.assignedBook.getShortString();
+        return this.book.getShortString();
     }
 }
