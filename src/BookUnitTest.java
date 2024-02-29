@@ -1,26 +1,30 @@
 public class BookUnitTest {
+    static Book newBook;
+    public static void main(String[] args) {
+        newBook = new Book("Emma", "Newman", "Planetfall", Genre.SCIENCE_FICTION);
+    }
 
-    public static void testConstructorAndGetters(Book newBook){
+    public static void testConstructorAndGetters(){
+//        newBook.setTitle("Planetfall");
+//        newBook.setAuthorFamilyName("Emma");
+//        newBook.setAuthorRestOfName("Newman");
+//        System.out.println(newBook.getBookID());
+//        System.out.println(newBook.getTitle());
+//        System.out.println(newBook.getAuthorFamilyNames());
+//        System.out.println(newBook.getAuthorRestOfName());
+    }
+
+    public static void testSetters(){
         newBook.setTitle("Planetfall");
         newBook.setAuthorFamilyName("Emma");
         newBook.setAuthorRestOfName("Newman");
-        System.out.println(newBook.getBookID());
-        System.out.println(newBook.getTitle());
-        System.out.println(newBook.getAuthorFamilyNames());
-        System.out.println(newBook.getAuthorRestOfName());
     }
 
-    public static void testSetters(Book newBook){
-        newBook.setTitle("Planetfall");
-        newBook.setAuthorFamilyName("Emma");
-        newBook.setAuthorRestOfName("Newman");
-    }
-
-    public static void testBookID(Book newBook){
+    public static void testBookID(){
         System.out.println(newBook.getBookID());
     }
 
-    public static void testToString(Book newBook){
+    public static void testToString(){
         System.out.println(newBook.toString());
     }
 }

@@ -1,33 +1,35 @@
-import java.util.LinkedList;
 
 public class ShelfSpace {
     final private Book assignedBook;
-    private LinkedList<Book> leftEnd;
-    private LinkedList<Book>  rightEnd;
+    private ShelfSpace leftSpace;
+    private ShelfSpace rightSpace;
 
    public ShelfSpace(Book book){
        this.assignedBook = book;
-       this.leftEnd = new LinkedList<Book>();
-       this.rightEnd = new LinkedList<Book>();
    }
 
-   public Book getBook(){
-       return this.assignedBook;
-   }
+    public Book getThisBook() {
+        return assignedBook;
+    }
 
-   public void addLeft(Book book){
-       this.leftEnd.add(book);
-   }
+    public ShelfSpace getLeftSpace() {
+        return leftSpace;
+    }
 
-   public void addRight(Book book){
-       this.rightEnd.add(book);
-   }
+    public ShelfSpace getRightSpace() {
+        return rightSpace;
+    }
 
-   public void setLeftSpace(){
+    public void setLeftSpace(ShelfSpace leftSpace) {
+        this.leftSpace = leftSpace;
+    }
 
-   }
+    public void setRightSpace(ShelfSpace rightSpace) {
+        this.rightSpace = rightSpace;
+    }
 
-    public void setRightSpace(){
-
+    @Override
+    public String toString() {
+        return this.assignedBook.getShortString();
     }
 }
