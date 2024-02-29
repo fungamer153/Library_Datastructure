@@ -13,6 +13,16 @@ public class Book {
         this.authorFamilyName = authorFN;
         this.authorRestOfName = authorRN;
         this.title = title;
+        this.genre = genre;
+        this.bookID = id++;
+    }
+
+    public Book(String authorFN, String authorRN, String title, Genre genre, int year, String publisher, int numPages){
+        this.authorFamilyName = authorFN;
+        this.authorRestOfName = authorRN;
+        this.title = title;
+        this.numPages = numPages;
+        this.year = year;
         this.publisher = publisher;
         this.genre = genre;
         this.bookID = id++;
@@ -37,6 +47,36 @@ public class Book {
         return this.bookID;
     }
 
+    public int getNumPages(){
+        return this.numPages;
+    }
+
+    public String getPublisher(){
+        return this.publisher;
+    }
+
+    public int getYear() {
+        return year;
+    }
+
+    public String getCitation(){
+        if (this.genre == Genre.SCIENCE_FICTION){
+            return this.authorFamilyName
+                    + ", " + this.authorRestOfName
+                    + ". " + this.title
+                    + ".";
+        } else if (this.genre == Genre.NON_FICTION) {
+            return this.authorFamilyName
+                    + ", " + this.authorRestOfName
+                    + ". " + this.title
+                    + ". " + this.publisher
+                    + " (" + this.year
+                    + ") " + this.numPages
+                    + "pp.";
+        }
+
+        return "";
+    }
 
     public void setAuthorFamilyName(String authorFamilyName){
         this.authorFamilyName = authorFamilyName;
