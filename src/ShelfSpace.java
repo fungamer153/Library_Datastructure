@@ -1,5 +1,5 @@
 public class ShelfSpace {
-    private final Book book;
+    private Book book;
     private ShelfSpace leftSpace;
     private ShelfSpace rightSpace;
 
