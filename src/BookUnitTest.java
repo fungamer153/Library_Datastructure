@@ -5,7 +5,6 @@ public class BookUnitTest {
     }
 
     public static void testConstructorAndGetters(){
-
     }
 
     public static void testSetters(){
