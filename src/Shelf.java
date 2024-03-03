@@ -7,25 +7,28 @@ public class Shelf {
         this.rightEnd = null;
     }
 
-    public void addLeft(Book book){
+    public void addLeft(Book book) {
+        ShelfSpace oldLeft = this.leftEnd;
+        ShelfSpace newSpace = new ShelfSpace(book);
+
         if (this.leftEnd == null) {
-            this.leftEnd = new ShelfSpace(book);
-            this.rightEnd = new ShelfSpace(book);
+            // Shelf is empty, add the book to both left and right ends
+            this.leftEnd = newSpace;
+            this.rightEnd = newSpace;
         } else {
-            this.leftEnd = new ShelfSpace(this.leftEnd.getBook());
-            this.leftEnd.setRightSpace(this.leftEnd);
+            // Shelf is not empty, update references
+            this.leftEnd = newSpace;
+            this.leftEnd.setRightSpace(oldLeft);
+
+            if (this.rightEnd.getLeftSpace() == null) {
+                this.rightEnd.setLeftSpace(this.leftEnd.getLeftSpace());
+            } else {
+                this.rightEnd.setLeftSpace(oldLeft);
+            }
         }
     }
 
-    public void takeRight(Book book){
-
-    }
-
-    public static void main(String[] args) {
-        Shelf shelf = new Shelf();
-        shelf.addLeft(new Book("SchwabV", "Newman", "Magic", Genre.SCIENCE_FICTION));
-        System.out.println(shelf.leftEnd.getRightSpace());
-        shelf.addLeft(new Book("Joe", "Newman", "Justice", Genre.SCIENCE_FICTION));
-        System.out.println(shelf.leftEnd.getRightSpace());
+    public Book takeRight() {
+        return null;
     }
 }
