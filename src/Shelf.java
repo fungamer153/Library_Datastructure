@@ -21,7 +21,7 @@ public class Shelf {
             this.leftEnd.setRightSpace(oldLeft);
 
             if (this.rightEnd.getLeftSpace() == null) {
-                this.rightEnd.setLeftSpace(this.leftEnd.getLeftSpace());
+                this.rightEnd.setLeftSpace(this.leftEnd);
             } else {
                 this.rightEnd.setLeftSpace(oldLeft);
             }
