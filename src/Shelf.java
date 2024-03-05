@@ -29,24 +29,33 @@ public class Shelf {
     }
 
     public Book takeRight() {
+        Book lastBook = this.rightEnd.getBook();
+        Book leftBook = this.rightEnd.getLeftSpace().getBook();
+
         if (this.rightEnd.getLeftSpace() == null && this.leftEnd.getRightSpace() == null) {
             this.rightEnd = null;
             this.leftEnd = null;
         } else {
-            Book lastBook = this.rightEnd.getBook();
-            Book leftBook = this.rightEnd.getLeftSpace().getBook();
-
             if (this.rightEnd.getLeftSpace() == this.leftEnd) {
                 this.rightEnd = new ShelfSpace(this.leftEnd.getBook());
                 this.leftEnd = rightEnd;
             } else {
                 this.rightEnd = new ShelfSpace(leftBook);
                 this.rightEnd.setLeftSpace(this.leftEnd);
-
-                return lastBook;
             }
         }
 
-        return null;
+        return lastBook;
+    }
+
+    public void empty(){
+        while (this.rightEnd != null){
+            Book currentBook = takeRight();
+            System.out.println(currentBook.getShortString());
+        }
+    }
+
+    public void printAll(){
+
     }
 }
