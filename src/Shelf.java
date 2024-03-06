@@ -29,13 +29,19 @@ public class Shelf {
     }
 
     public Book takeRight() {
-        Book lastBook = this.rightEnd.getBook();
-        Book leftBook = this.rightEnd.getLeftSpace().getBook();
-
         if (this.rightEnd.getLeftSpace() == null && this.leftEnd.getRightSpace() == null) {
+            Book foundBook = this.rightEnd.getBook();
+
+            if (foundBook != null) {
+                return foundBook;
+            }
+
             this.rightEnd = null;
             this.leftEnd = null;
         } else {
+            Book lastBook = this.rightEnd.getBook();
+            Book leftBook = this.rightEnd.getLeftSpace().getBook();
+
             if (this.rightEnd.getLeftSpace() == this.leftEnd) {
                 this.rightEnd = new ShelfSpace(this.leftEnd.getBook());
                 this.leftEnd = rightEnd;
@@ -43,15 +49,20 @@ public class Shelf {
                 this.rightEnd = new ShelfSpace(leftBook);
                 this.rightEnd.setLeftSpace(this.leftEnd);
             }
+
+            return lastBook;
         }
 
-        return lastBook;
+        return null;
     }
 
     public void empty(){
         while (this.rightEnd != null){
             Book currentBook = takeRight();
-            System.out.println(currentBook.getShortString());
+
+            if (currentBook != null){
+                System.out.println(currentBook.getShortString());
+            }
         }
     }
 
