@@ -33,11 +33,10 @@ public class Shelf {
             Book foundBook = this.rightEnd.getBook();
 
             if (foundBook != null) {
+                this.rightEnd = null;
+                this.leftEnd = null;
                 return foundBook;
             }
-
-            this.rightEnd = null;
-            this.leftEnd = null;
         } else {
             Book lastBook = this.rightEnd.getBook();
             Book leftBook = this.rightEnd.getLeftSpace().getBook();
@@ -66,7 +65,20 @@ public class Shelf {
         }
     }
 
-    public void printAll(){
+    public String printAll(){
+        ShelfSpace currentSpace = this.leftEnd;
 
+        if (currentSpace == null) {
+            return "empty";
+        } else {
+            while (currentSpace != null) {
+                Book currentBook = currentSpace.getBook();
+                currentSpace = currentSpace.getRightSpace();
+
+                System.out.println(currentBook.getShortString());
+            }
+
+            return "";
+        }
     }
 }
