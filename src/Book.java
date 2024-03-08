@@ -71,19 +71,36 @@ public class Book {
     }
 
     public String getCitation(){
-        if (this.genre == Genre.SCIENCE_FICTION){
-            return this.authorFamilyName
-                    + ", " + this.authorRestOfName
-                    + ". " + this.title
-                    + ".";
-        } else if (this.genre == Genre.NON_FICTION) {
-            return this.authorFamilyName
-                    + ", " + this.authorRestOfName
-                    + ". " + this.title
+        if (this.authors != null) {
+            String finalOutput = "";
+
+            for (int i = 0; i < this.authors.length; i += 2) {
+                finalOutput += this.authors[i] + ", " + this.authors[i + 1] + (i < this.authors.length - 2 ? ", " : ".");
+            }
+
+            finalOutput += ". "
+                    + this.title
                     + ". " + this.publisher
                     + " (" + this.year
                     + ") " + this.numPages
                     + "pp.";
+
+            return finalOutput;
+        } else {
+            if (this.genre == Genre.SCIENCE_FICTION){
+                return this.authorFamilyName
+                        + ", " + this.authorRestOfName
+                        + ". " + this.title
+                        + ".";
+            } else if (this.genre == Genre.NON_FICTION) {
+                return this.authorFamilyName
+                        + ", " + this.authorRestOfName
+                        + ". " + this.title
+                        + ". " + this.publisher
+                        + " (" + this.year
+                        + ") " + this.numPages
+                        + "pp.";
+            }
         }
 
         return "";
@@ -95,7 +112,7 @@ public class Book {
 
     public void setAuthorFamilyNames(String name){
         if (this.authors.length == 0) {
-            this.authors[0] = name;
+            this.authors[9] = name;
         } else {
             this.authors[this.authors.length + 1] = name;
         }
