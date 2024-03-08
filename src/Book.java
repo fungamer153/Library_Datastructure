@@ -1,4 +1,5 @@
 public class Book {
+    private String[] authors = {};
     private String authorFamilyName;
     private String authorRestOfName;
     private String title;
@@ -20,6 +21,16 @@ public class Book {
     public Book(String authorFN, String authorRN, String title, Genre genre, int year, String publisher, int numPages){
         this.authorFamilyName = authorFN;
         this.authorRestOfName = authorRN;
+        this.title = title;
+        this.numPages = numPages;
+        this.year = year;
+        this.publisher = publisher;
+        this.genre = genre;
+        this.bookID = id++;
+    }
+
+    public Book(String[] authors, String title, Genre genre, int year, String publisher, int numPages){
+        this.authors = authors;
         this.title = title;
         this.numPages = numPages;
         this.year = year;
