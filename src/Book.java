@@ -110,6 +110,14 @@ public class Book {
         this.authorFamilyName = authorFamilyName;
     }
 
+    public void setAuthorFamilyNames(String name){
+        if (this.authors.length == 0) {
+            this.authors[0] = name;
+        } else {
+            this.authors[this.authors.length + 1] = name;
+        }
+    }
+
     public void setAuthorRestOfName(String authorRestOfName){
         this.authorRestOfName = authorRestOfName;
     }
