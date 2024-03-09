@@ -48,11 +48,7 @@ public class Book {
     }
 
     public String getAuthorRestOfName(){
-        if (this.authorRestOfName != null) {
-            return this.authorRestOfName;
-        } else {
-            return "asdasd";
-        }
+        return this.authorRestOfName;
     }
 
     public Genre getGenre(){
@@ -79,21 +75,22 @@ public class Book {
     }
 
     public String getCitation(){
+        System.out.println(this.authorFamilyName);
+
         if (this.authorFamilyName == null) {
             String finalOutput = "";
 
             for (int i = 0; i < this.authors.length; i += 2) {
-                finalOutput += this.authors[i] + ", " + this.authors[i + 1] + (i < this.authors.length - 2 ? ", " : ".");
+                finalOutput += this.authors[i] + ", " + this.authors[i + 1] + (i < this.authors.length - 2 ? " and " : ". ");
             }
 
-            finalOutput += ". "
-                    + this.title
+            finalOutput += this.title
                     + ". " + this.publisher
-                    + " (" + this.year
+                    + "(" + this.year
                     + ") " + this.numPages
                     + "pp.";
 
-            return "hdsfh";
+            return finalOutput;
         } else {
             if (this.genre == Genre.SCIENCE_FICTION){
                 return this.authorFamilyName
@@ -109,6 +106,7 @@ public class Book {
                         + ") " + this.numPages
                         + "pp.";
             }
+
         }
 
         return "";
@@ -120,7 +118,7 @@ public class Book {
 
     public void setAuthorFamilyNames(String name) {
         if (this.authors.length == 0) {
-            //this.authors = new String[]{name};
+            this.authors = new String[]{name};
         } else {
             String[] newAuthors = new String[this.authors.length + 1];
 
@@ -151,8 +149,21 @@ public class Book {
     }
 
     public String getShortString() {
-        return this.authorFamilyName
-                + this.authorRestOfName
-                + this.title;
+        if (this.authorFamilyName != null) {
+            return this.authorFamilyName
+                    + this.authorRestOfName
+                    + this.title;
+        } else {
+            return this.authors[1].toUpperCase()
+                    + this.authors[0].toUpperCase()
+                    + "et al."
+                    + this.title;
+        }
     }
+
+//    public static void main(String[] args) {
+//        Book newBook = new Book(new String[]{}, "Abstractions & Embodiments", Genre.NON_FICTION, 2022, "JHUP", 459);
+//        newBook.setAuthorFamilyNames("Abbate");
+//        newBook.setAuthorFamilyNames("Janet");
+//    }
 }
