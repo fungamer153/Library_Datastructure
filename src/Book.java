@@ -86,13 +86,12 @@ public class Book {
                 }
             }
 
-            finalOutput += this.title
+            finalOutput += " " + this.title
                     + ". " + this.publisher
                     + " (" + this.year
                     + ") " + this.numPages
                     + "pp.";
 
-            System.out.println(finalOutput);
             return finalOutput;
         } else {
             if (this.genre == Genre.SCIENCE_FICTION) {
