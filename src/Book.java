@@ -74,24 +74,28 @@ public class Book {
         return year;
     }
 
-    public String getCitation(){
+    public String getCitation() {
         if (this.authorFamilyName == null) {
             String finalOutput = "";
 
-            for (int i = 0; i < this.authors.length; i += 2) {
-                finalOutput += this.authors[i] + ", " + this.authors[i + 1] + (i < this.authors.length - 2 ? " and " : ". ");
+            for (int i = 0; i < this.authors.length; i += 2){
+                if (i + 1 >= this.authors.length) {
+                    finalOutput += this.authors[i] + ".";
+                } else {
+                    finalOutput += this.authors[i] + ", " + this.authors[i + 1] + (i < this.authors.length - 2 ? " and " : ".");
+                }
             }
 
             finalOutput += this.title
                     + ". " + this.publisher
-                    + "(" + this.year
+                    + " (" + this.year
                     + ") " + this.numPages
                     + "pp.";
 
             System.out.println(finalOutput);
             return finalOutput;
         } else {
-            if (this.genre == Genre.SCIENCE_FICTION){
+            if (this.genre == Genre.SCIENCE_FICTION) {
                 return this.authorFamilyName
                         + ", " + this.authorRestOfName
                         + ". " + this.title
@@ -105,7 +109,6 @@ public class Book {
                         + ") " + this.numPages
                         + "pp.";
             }
-
         }
 
         return "";
@@ -160,9 +163,11 @@ public class Book {
         }
     }
 
-//    public static void main(String[] args) {
-//        Book newBook = new Book(new String[]{}, "Abstractions & Embodiments", Genre.NON_FICTION, 2022, "JHUP", 459);
-//        newBook.setAuthorFamilyNames("Abbate");
-//        newBook.setAuthorFamilyNames("Janet");
-//    }
+    public static void main(String[] args) {
+        Book newBook = new Book(new String[]{}, "Abstractions & Embodiments", Genre.NON_FICTION, 2022, "JHUP", 459);
+        newBook.setAuthorFamilyNames("Abbate");
+        newBook.setAuthorFamilyNames("Janet");
+        newBook.setAuthorFamilyNames("Barrack");
+        System.out.println(newBook.getCitation());
+    }
 }
