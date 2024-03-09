@@ -75,8 +75,6 @@ public class Book {
     }
 
     public String getCitation(){
-        System.out.println(this.authorFamilyName);
-
         if (this.authorFamilyName == null) {
             String finalOutput = "";
 
