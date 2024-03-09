@@ -74,41 +74,41 @@ public class Book {
         return year;
     }
 
-    public String getCitation(){
-        if (this.authorFamilyName == null) {
-            String finalOutput = "";
-
-            for (int i = 0; i < this.authors.length; i += 2) {
-                finalOutput += this.authors[i] + ", " + this.authors[i + 1] + (i < this.authors.length - 2 ? " and " : ". ");
-            }
-
-            finalOutput += this.title
-                    + ". " + this.publisher
-                    + "(" + this.year
-                    + ") " + this.numPages
-                    + "pp.";
-
-            return finalOutput;
-        } else {
-            if (this.genre == Genre.SCIENCE_FICTION){
-                return this.authorFamilyName
-                        + ", " + this.authorRestOfName
-                        + ". " + this.title
-                        + ".";
-            } else if (this.genre == Genre.NON_FICTION) {
-                return this.authorFamilyName
-                        + ", " + this.authorRestOfName
-                        + ". " + this.title
-                        + ". " + this.publisher
-                        + " (" + this.year
-                        + ") " + this.numPages
-                        + "pp.";
-            }
-
-        }
-
-        return "";
-    }
+//    public String getCitation(){
+//        if (this.authorFamilyName == null) {
+//            String finalOutput = "";
+//
+//            for (int i = 0; i < this.authors.length; i += 2) {
+//                finalOutput += this.authors[i] + ", " + this.authors[i + 1] + (i < this.authors.length - 2 ? " and " : ". ");
+//            }
+//
+//            finalOutput += this.title
+//                    + ". " + this.publisher
+//                    + "(" + this.year
+//                    + ") " + this.numPages
+//                    + "pp.";
+//
+//            return finalOutput;
+//        } else {
+//            if (this.genre == Genre.SCIENCE_FICTION){
+//                return this.authorFamilyName
+//                        + ", " + this.authorRestOfName
+//                        + ". " + this.title
+//                        + ".";
+//            } else if (this.genre == Genre.NON_FICTION) {
+//                return this.authorFamilyName
+//                        + ", " + this.authorRestOfName
+//                        + ". " + this.title
+//                        + ". " + this.publisher
+//                        + " (" + this.year
+//                        + ") " + this.numPages
+//                        + "pp.";
+//            }
+//
+//        }
+//
+//        return "";
+//    }
 
     public void setAuthorFamilyName(String authorFamilyName){
         this.authorFamilyName = authorFamilyName;
