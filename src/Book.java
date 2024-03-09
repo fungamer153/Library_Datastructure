@@ -88,6 +88,7 @@ public class Book {
                     + ") " + this.numPages
                     + "pp.";
 
+            System.out.println(finalOutput);
             return finalOutput;
         } else {
             if (this.genre == Genre.SCIENCE_FICTION){
