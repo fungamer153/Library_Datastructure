@@ -163,11 +163,11 @@ public class Book {
         }
     }
 
-    public static void main(String[] args) {
-        Book newBook = new Book(new String[]{}, "Abstractions & Embodiments", Genre.NON_FICTION, 2022, "JHUP", 459);
-        newBook.setAuthorFamilyNames("Abbate");
-        newBook.setAuthorFamilyNames("Janet");
-        newBook.setAuthorFamilyNames("Barrack");
-        System.out.println(newBook.getCitation());
-    }
+//    public static void main(String[] args) {
+//        Book newBook = new Book(new String[]{}, "Abstractions & Embodiments", Genre.NON_FICTION, 2022, "JHUP", 459);
+//        newBook.setAuthorFamilyNames("Abbate");
+//        newBook.setAuthorFamilyNames("Janet");
+//        newBook.setAuthorFamilyNames("Barrack");
+//        System.out.println(newBook.getCitation());
+//    }
 }
