@@ -40,18 +40,26 @@ public class Book {
     }
 
     public String getAuthorFamilyNames(){
-        return authorFamilyName;
+        if (this.authorFamilyName != null) {
+            return this.authorFamilyName;
+        } else {
+            return this.authors[1];
+        }
     }
 
     public String getAuthorRestOfName(){
-        return authorRestOfName;
+        if (this.authorRestOfName != null) {
+            return this.authorRestOfName;
+        } else {
+            return "asdasd";
+        }
     }
 
     public Genre getGenre(){
         return this.genre;
     }
     public String getTitle(){
-        return title;
+        return this.title;
     }
 
     public int getBookID(){
@@ -71,7 +79,7 @@ public class Book {
     }
 
     public String getCitation(){
-        if (this.authors != null) {
+        if (this.authorFamilyName == null) {
             String finalOutput = "";
 
             for (int i = 0; i < this.authors.length; i += 2) {
@@ -85,7 +93,7 @@ public class Book {
                     + ") " + this.numPages
                     + "pp.";
 
-            return finalOutput;
+            return "hdsfh";
         } else {
             if (this.genre == Genre.SCIENCE_FICTION){
                 return this.authorFamilyName
@@ -110,11 +118,18 @@ public class Book {
         this.authorFamilyName = authorFamilyName;
     }
 
-    public void setAuthorFamilyNames(String name){
+    public void setAuthorFamilyNames(String name) {
         if (this.authors.length == 0) {
-            this.authors[9] = name;
+            //this.authors = new String[]{name};
         } else {
-            this.authors[this.authors.length + 1] = name;
+            String[] newAuthors = new String[this.authors.length + 1];
+
+            for (int i = 0; i < this.authors.length; i++) {
+                newAuthors[i] = this.authors[i];
+            }
+
+            newAuthors[this.authors.length] = name;
+            this.authors = newAuthors;
         }
     }
 
