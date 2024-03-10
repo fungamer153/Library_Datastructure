@@ -4,7 +4,7 @@ public class BookUnitTest {
         newBook = new Book("Emma", "Newman", "Planetfall", Genre.SCIENCE_FICTION);
     }
 
-    public static void testConstructorAndGetters(){
+    public static void testConstructorAndGetters() {
         newBook.setTitle("Planetfall");
         newBook.setAuthorFamilyName("Emma");
         newBook.setAuthorRestOfName("Newman");
@@ -14,17 +14,17 @@ public class BookUnitTest {
         System.out.println(newBook.getCitation());
     }
 
-    public static void testSetters(){
+    public static void testSetters() {
         newBook.setTitle("Planetfall");
         newBook.setAuthorFamilyName("Emma");
         newBook.setAuthorRestOfName("Newman");
     }
 
-    public static void testBookID(){
+    public static void testBookID() {
         System.out.println(newBook.getBookID());
     }
 
-    public static void testToString(){
+    public static void testToString() {
         System.out.println(newBook.toString());
     }
 }

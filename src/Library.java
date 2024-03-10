@@ -8,7 +8,7 @@ public class Library {
     private ArrayList<Book> fantasy;
     private ArrayList<Book> romance;
 
-    public Library(Shelf incoming){
+    public Library(Shelf incoming) {
         this.incoming = incoming;
         this.sciFi = new ArrayList<>();
         this.nonFiction = new ArrayList<>();
@@ -38,7 +38,7 @@ public class Library {
     }
 
     public void process(){
-        while (true){
+        while (true) {
             Book newBook = incoming.takeRight();
 
             if (newBook == null) {
