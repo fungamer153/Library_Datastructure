@@ -8,51 +8,42 @@ public class Shelf {
     }
 
     public void addLeft(Book book) {
-        ShelfSpace oldLeft = this.leftEnd;
         ShelfSpace newSpace = new ShelfSpace(book);
 
         if (this.leftEnd == null) {
             this.leftEnd = newSpace;
             this.rightEnd = newSpace;
         } else {
+            ShelfSpace oldLeft = this.leftEnd;
             this.leftEnd = newSpace;
-            this.leftEnd.setRightSpace(oldLeft);
-
-            if (this.rightEnd.getLeftSpace() == null) {
-                this.rightEnd.setLeftSpace(this.leftEnd);
-            } else {
-                this.rightEnd.setLeftSpace(oldLeft);
-            }
+            newSpace.setRightSpace(oldLeft);
+            oldLeft.setLeftSpace(newSpace);
         }
     }
 
     public Book takeRight() {
         if (this.leftEnd == null || this.rightEnd == null) {return null;}
+        Book lastBook = this.rightEnd.getBook();
 
-        if (this.rightEnd.getLeftSpace() == null && this.leftEnd.getRightSpace() == null) {
-            Book foundBook = this.rightEnd.getBook();
+        if (this.rightEnd.getLeftSpace() != null) {
+            Book leftBook = this.rightEnd.getLeftSpace().getBook();
+            ShelfSpace oldLeftSpace = this.rightEnd.getLeftSpace();
 
-            if (foundBook != null) {
-                this.rightEnd = null;
+            this.rightEnd.setLeftSpace(null);  // Remove the reference to the left space
+
+            if (oldLeftSpace != null) {
+                this.rightEnd = oldLeftSpace;
+                this.rightEnd.setRightSpace(null);
+            } else {
                 this.leftEnd = null;
-                return foundBook;
+                this.rightEnd = null;
             }
         } else {
-            Book lastBook = this.rightEnd.getBook();
-            Book leftBook = this.rightEnd.getLeftSpace().getBook();
-
-            if (this.rightEnd.getLeftSpace() == this.leftEnd) {
-                this.rightEnd = new ShelfSpace(this.leftEnd.getBook());
-                this.leftEnd = rightEnd;
-            } else {
-                this.rightEnd = new ShelfSpace(leftBook);
-                this.rightEnd.setLeftSpace(this.leftEnd);
-            }
-
-            return lastBook;
+            this.leftEnd = null;
+            this.rightEnd = null;
         }
 
-        return null;
+        return lastBook;
     }
 
     public void empty(){

@@ -1,7 +1,7 @@
 import java.util.ArrayList;
 
 public class Library {
-    Shelf incoming;
+    private Shelf incoming;
     private ArrayList<Book> sciFi;
     private ArrayList<Book> nonFiction;
     private ArrayList<Book> crime;
@@ -38,6 +38,7 @@ public class Library {
     }
 
     public void process(){
+       // incoming.printAll();
         while (true){
             Book newBook = incoming.takeRight();
 
@@ -74,9 +75,6 @@ public class Library {
         } else if (neededGenre == Genre.ROMANCE) {
             neededShelf = this.romance;
         }
-
-        System.out.println(neededGenre);
-        System.out.println(neededShelf.size());
 
         for (Book book : neededShelf) {
             if (book.getTitle().contains(bookTitle)) {
