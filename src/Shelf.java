@@ -26,10 +26,8 @@ public class Shelf {
         Book lastBook = this.rightEnd.getBook();
 
         if (this.rightEnd.getLeftSpace() != null) {
-            Book leftBook = this.rightEnd.getLeftSpace().getBook();
             ShelfSpace oldLeftSpace = this.rightEnd.getLeftSpace();
-
-            this.rightEnd.setLeftSpace(null);  // Remove the reference to the left space
+            this.rightEnd.setLeftSpace(null);
 
             if (oldLeftSpace != null) {
                 this.rightEnd = oldLeftSpace;
@@ -65,7 +63,6 @@ public class Shelf {
             while (currentSpace != null) {
                 Book currentBook = currentSpace.getBook();
                 currentSpace = currentSpace.getRightSpace();
-
                 System.out.println(currentBook.getShortString());
             }
 
