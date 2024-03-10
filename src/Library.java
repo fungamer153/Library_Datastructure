@@ -17,27 +17,27 @@ public class Library {
         this.romance = new ArrayList<>();
     }
 
-    public ArrayList<Book> getSciFi(){
+    public ArrayList<Book> getSciFi() {
         return this.sciFi;
     }
 
-    public ArrayList<Book> getNonFiction(){
+    public ArrayList<Book> getNonFiction() {
         return this.nonFiction;
     }
 
-    public ArrayList<Book> getCrime(){
+    public ArrayList<Book> getCrime() {
         return this.crime;
     }
 
-    public ArrayList<Book> getFantasy(){
+    public ArrayList<Book> getFantasy() {
         return this.fantasy;
     }
 
-    public ArrayList<Book> getRomance(){
+    public ArrayList<Book> getRomance() {
         return this.romance;
     }
 
-    public void process(){
+    public void process() {
         while (true) {
             Book newBook = incoming.takeRight();
 
@@ -67,7 +67,7 @@ public class Library {
         }
     }
 
-    public void search(Genre neededGenre, String bookTitle){
+    public void search(Genre neededGenre, String bookTitle) {
         boolean foundResults = false;
         ArrayList<Book> neededShelf = new ArrayList<>();;
 

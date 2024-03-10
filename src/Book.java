@@ -10,7 +10,7 @@ public class Book {
     private int bookID;
     private static int id = 1004825;
 
-    public Book(String authorFN, String authorRN, String title, Genre genre){
+    public Book(String authorFN, String authorRN, String title, Genre genre) {
         this.authorFamilyName = authorFN;
         this.authorRestOfName = authorRN;
         this.title = title;
@@ -18,7 +18,7 @@ public class Book {
         this.bookID = id++;
     }
 
-    public Book(String authorFN, String authorRN, String title, Genre genre, int year, String publisher, int numPages){
+    public Book(String authorFN, String authorRN, String title, Genre genre, int year, String publisher, int numPages) {
         this.authorFamilyName = authorFN;
         this.authorRestOfName = authorRN;
         this.title = title;
@@ -29,7 +29,7 @@ public class Book {
         this.bookID = id++;
     }
 
-    public Book(String[] authors, String title, Genre genre, int year, String publisher, int numPages){
+    public Book(String[] authors, String title, Genre genre, int year, String publisher, int numPages) {
         this.authors = authors;
         this.title = title;
         this.numPages = numPages;
@@ -39,7 +39,7 @@ public class Book {
         this.bookID = id++;
     }
 
-    public String getAuthorFamilyNames(){
+    public String getAuthorFamilyNames() {
         if (this.authorFamilyName != null) {
             return this.authorFamilyName;
         } else {
@@ -47,26 +47,26 @@ public class Book {
         }
     }
 
-    public String getAuthorRestOfName(){
+    public String getAuthorRestOfName() {
         return this.authorRestOfName;
     }
 
-    public Genre getGenre(){
+    public Genre getGenre() {
         return this.genre;
     }
-    public String getTitle(){
+    public String getTitle() {
         return this.title;
     }
 
-    public int getBookID(){
+    public int getBookID() {
         return this.bookID;
     }
 
-    public int getNumPages(){
+    public int getNumPages() {
         return this.numPages;
     }
 
-    public String getPublisher(){
+    public String getPublisher() {
         return this.publisher;
     }
 
@@ -113,7 +113,7 @@ public class Book {
         return "";
     }
 
-    public void setAuthorFamilyName(String authorFamilyName){
+    public void setAuthorFamilyName(String authorFamilyName) {
         this.authorFamilyName = authorFamilyName;
     }
 
@@ -132,11 +132,11 @@ public class Book {
         }
     }
 
-    public void setAuthorRestOfName(String authorRestOfName){
+    public void setAuthorRestOfName(String authorRestOfName) {
         this.authorRestOfName = authorRestOfName;
     }
 
-    public void setTitle(String title){
+    public void setTitle(String title) {
         this.title = title;
     }
 

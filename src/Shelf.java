@@ -45,16 +45,16 @@ public class Shelf {
     }
 
     public void empty(){
-        while (this.rightEnd != null){
+        while (this.rightEnd != null) {
             Book currentBook = this.takeRight();
 
-            if (currentBook != null){
+            if (currentBook != null) {
                 System.out.println(currentBook.getShortString());
             }
         }
     }
 
-    public String printAll(){
+    public String printAll() {
         ShelfSpace currentSpace = this.leftEnd;
 
         if (currentSpace == null) {
