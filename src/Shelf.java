@@ -27,6 +27,8 @@ public class Shelf {
     }
 
     public Book takeRight() {
+        if (this.leftEnd == null || this.rightEnd == null) {return null;}
+
         if (this.rightEnd.getLeftSpace() == null && this.leftEnd.getRightSpace() == null) {
             Book foundBook = this.rightEnd.getBook();
 
@@ -55,7 +57,7 @@ public class Shelf {
 
     public void empty(){
         while (this.rightEnd != null){
-            Book currentBook = takeRight();
+            Book currentBook = this.takeRight();
 
             if (currentBook != null){
                 System.out.println(currentBook.getShortString());
