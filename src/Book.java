@@ -6,9 +6,10 @@ public class Book {
     private String publisher;
     private int numPages;
     private int year;
-    private Genre genre;
-    private int bookID;
+    private final int bookID;
     private static int id = 1004825;
+    private final Genre genre;
+
 
     public Book(String authorFN, String authorRN, String title, Genre genre) {
         this.authorFamilyName = authorFN;

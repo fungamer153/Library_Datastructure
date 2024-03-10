@@ -1,12 +1,12 @@
 import java.util.ArrayList;
 
 public class Library {
-    private Shelf incoming;
-    private ArrayList<Book> sciFi;
-    private ArrayList<Book> nonFiction;
-    private ArrayList<Book> crime;
-    private ArrayList<Book> fantasy;
-    private ArrayList<Book> romance;
+    private final Shelf incoming;
+    private final ArrayList<Book> sciFi;
+    private final ArrayList<Book> nonFiction;
+    private final ArrayList<Book> crime;
+    private final ArrayList<Book> fantasy;
+    private final ArrayList<Book> romance;
 
     public Library(Shelf incoming) {
         this.incoming = incoming;
