@@ -38,7 +38,6 @@ public class Library {
     }
 
     public void process(){
-       // incoming.printAll();
         while (true){
             Book newBook = incoming.takeRight();
 
@@ -46,16 +45,24 @@ public class Library {
                 break;
             }
 
-            if (newBook.getGenre() == Genre.SCIENCE_FICTION){
-                this.sciFi.add(newBook);
-            } else if (newBook.getGenre() == Genre.NON_FICTION) {
-                this.nonFiction.add(newBook);
-            } else if (newBook.getGenre() == Genre.FANTASY) {
-                this.fantasy.add(newBook);
-            } else if (newBook.getGenre() == Genre.CRIME) {
-                this.crime.add(newBook);
-            } else if (newBook.getGenre() == Genre.ROMANCE) {
-                this.romance.add(newBook);
+            switch (newBook.getGenre()) {
+                case SCIENCE_FICTION:
+                    this.sciFi.add(newBook);
+                    break;
+                case NON_FICTION:
+                    this.nonFiction.add(newBook);
+                    break;
+                case CRIME:
+                    this.crime.add(newBook);
+                    break;
+                case FANTASY:
+                    this.fantasy.add(newBook);
+                    break;
+                case ROMANCE:
+                    this.romance.add(newBook);
+                    break;
+                default:
+                    break;
             }
         }
     }
@@ -64,19 +71,27 @@ public class Library {
         boolean foundResults = false;
         ArrayList<Book> neededShelf = new ArrayList<>();;
 
-        if (neededGenre == Genre.SCIENCE_FICTION){
-            neededShelf = this.sciFi;
-        } else if (neededGenre == Genre.NON_FICTION) {
-            neededShelf = this.nonFiction;
-        } else if (neededGenre == Genre.CRIME) {
-            neededShelf = this.crime;
-        } else if (neededGenre == Genre.FANTASY) {
-            neededShelf = this.fantasy;
-        } else if (neededGenre == Genre.ROMANCE) {
-            neededShelf = this.romance;
+        switch (neededGenre) {
+            case SCIENCE_FICTION:
+                neededShelf = this.sciFi;
+                break;
+            case NON_FICTION:
+                neededShelf = this.nonFiction;
+                break;
+            case CRIME:
+                neededShelf = this.crime;
+                break;
+            case FANTASY:
+                neededShelf = this.fantasy;
+                break;
+            case ROMANCE:
+                neededShelf = this.romance;
+                break;
+            default:
+                break;
         }
 
-        for (Book book : neededShelf) {
+        for (Book book: neededShelf) {
             if (book.getTitle().contains(bookTitle)) {
                 System.out.println(book.getCitation());
                 foundResults = true;

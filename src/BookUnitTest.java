@@ -5,6 +5,13 @@ public class BookUnitTest {
     }
 
     public static void testConstructorAndGetters(){
+        newBook.setTitle("Planetfall");
+        newBook.setAuthorFamilyName("Emma");
+        newBook.setAuthorRestOfName("Newman");
+
+        System.out.println(newBook.getTitle());
+        System.out.println(newBook.getShortString());
+        System.out.println(newBook.getCitation());
     }
 
     public static void testSetters(){
