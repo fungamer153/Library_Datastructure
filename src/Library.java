@@ -1,15 +1,15 @@
 /**
- * Library class contains 5 different genre ArrayLists, process method
- * is used to sort these books into proper ArrayLists from the incoming
- * shelf, class is able to return these ArrayLists and perform searching
- * algorithm to display book titles with matching names to the user in a
- * specific genre category.
+ * Library class contains different genre ArrayLists alongside mutator
+ * and getter methods that aid in processing of books into their adequate
+ * genre ArrayLists, that can be later gotten and utilised in searching
+ * method to find books with matching titles.
  *
  * @author Maksim Strelkov
  * - no copyright
  * @version 1.0
  * @since 2024-03-10
  */
+
 
 import java.util.ArrayList;
 
