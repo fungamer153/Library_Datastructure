@@ -7,7 +7,6 @@
  * @since 2024-03-10
  */
 
-
 public enum Genre {
     FANTASY,
     CRIME,

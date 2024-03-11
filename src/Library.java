@@ -90,7 +90,7 @@ public class Library {
 
             /*
                 Depending on what genre the book is, sort it
-                to the appropriate ArrayList genre
+                to the appropriate ArrayList genre.
              */
             switch (newBook.getGenre()) {
                 case SCIENCE_FICTION:
@@ -123,7 +123,10 @@ public class Library {
         boolean foundResults = false;
         ArrayList<Book> neededShelf = new ArrayList<>();;
 
-        // Fetch the correct ArrayList based on what genre we want to search.
+        /*
+            Fetch the correct ArrayList based on what genre we want to search,
+            using the getter methods return the already created ArrayList.
+         */
         switch (neededGenre) {
             case SCIENCE_FICTION:
                 neededShelf = getSciFi();

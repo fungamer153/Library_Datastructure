@@ -97,6 +97,11 @@ public class Shelf {
         if (currentSpace == null) {
             return "empty";
         } else {
+            /*
+                While left end isn't empty recursively get
+                the book from the right side without removing it
+                and output the shortened citation to the terminal
+             */
             while (currentSpace != null) {
                 Book currentBook = currentSpace.getBook();
                 currentSpace = currentSpace.getRightSpace();
