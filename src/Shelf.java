@@ -13,7 +13,7 @@ public class Shelf {
     private ShelfSpace leftEnd;
     private ShelfSpace rightEnd;
 
-    /**
+    /*
      * Constructor for the shelf, having attributes for both ends of itself.
      */
     public Shelf() {
