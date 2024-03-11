@@ -1,7 +1,7 @@
 /**
  * Book class represents a created book object that contains mutator and getter
  * methods allowing the book object to be modified and have its contents
- * changed.
+ * output to terminal or returned.
  *
  * @author Maksim Strelkov
  * - no copyright
@@ -69,7 +69,7 @@ public class Book {
      * Book class constructor for books with multiple authors, with in-depth
      * detail about the book.
      * @param authors Array containing strings of author's family name
-     *                & rest of their name
+     *                and rest of their name.
      * @param title What the book is called.
      * @param genre What genre the book belongs in.
      * @param year What year the book was released in.
@@ -159,7 +159,7 @@ public class Book {
 
     /**
      * Outputs a citation depending on what genre the book is set in,
-     * including important book information like the publisher, year and
+     * including essential book information like the publisher, year and
      * how many pages are inside.
      * @return Formatted string of the books' information.
      */
@@ -271,6 +271,7 @@ public class Book {
      * @return Less attribute information pertaining to the book.
      */
     public String getShortString() {
+        // If there are no multiple authors then proceed with 1st selection
         if (this.authorFamilyName != null) {
             return this.authorFamilyName
                     + this.authorRestOfName
