@@ -92,6 +92,8 @@ public class Book {
      * @return String containing the author's family name.
      */
     public String getAuthorFamilyNames() {
+        //Check on if the book object contains multiple authors,
+        //choose what way we want to return correct string
         if (this.authorFamilyName != null) {
             return this.authorFamilyName;
         } else {
@@ -162,14 +164,21 @@ public class Book {
      * @return Formatted string of the books' information.
      */
     public String getCitation() {
+        // Check on if the object has multiple authors or not
         if (this.authorFamilyName == null) {
+            // If multiple authors construct a string of authors
             String finalOutput = "";
 
             for (int i = 0; i < this.authors.length; i += 2){
+                // If we reach end of authors then add a comma
                 if (i + 1 >= this.authors.length) {
                     finalOutput += this.authors[i] + ".";
                 } else {
-                    finalOutput += this.authors[i] + ", " + this.authors[i + 1] + (i < this.authors.length - 2 ? " and " : ".");
+                    // If not end of the author array then add author name
+                    // onto the last one
+                    finalOutput += this.authors[i] + ", "
+                            + this.authors[i + 1]
+                            + (i < this.authors.length - 2 ? " and " : ".");
                 }
             }
 
@@ -181,6 +190,7 @@ public class Book {
 
             return finalOutput;
         } else {
+            // If no multiple authors, proceed with normal execution
             if (this.genre == Genre.SCIENCE_FICTION) {
                 return this.authorFamilyName
                         + ", " + this.authorRestOfName
@@ -211,6 +221,8 @@ public class Book {
      * @param name Name of the new added author.
      */
     public void setAuthorFamilyNames(String name) {
+        // If author array is empty, create new array with first record being
+        // the new added name
         if (this.authors.length == 0) {
             this.authors = new String[]{name};
         } else {
