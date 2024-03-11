@@ -1,3 +1,5 @@
+import java.util.ArrayList;
+
 /**
  * Library class contains different genre ArrayLists alongside mutator
  * and getter methods that aid in processing of books into their adequate
@@ -9,8 +11,6 @@
  * @version 1.0
  * @since 2024-03-10
  */
-
-import java.util.ArrayList;
 
 public class Library {
     private Shelf incoming;
