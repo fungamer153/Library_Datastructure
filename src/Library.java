@@ -10,7 +10,6 @@
  * @since 2024-03-10
  */
 
-
 import java.util.ArrayList;
 
 public class Library {
