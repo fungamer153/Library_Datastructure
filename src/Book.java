@@ -174,8 +174,12 @@ public class Book {
                 if (i + 1 >= this.authors.length) {
                     finalOutput += this.authors[i] + ".";
                 } else {
-                    // If not end of the author array then add author name
-                    // onto the last one
+
+                    /*
+                     If not end of the author array then add author name
+                     onto the last one
+                     */
+
                     finalOutput += this.authors[i] + ", "
                             + this.authors[i + 1]
                             + (i < this.authors.length - 2 ? " and " : ".");
