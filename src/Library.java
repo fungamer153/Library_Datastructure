@@ -1,7 +1,8 @@
 /**
- * Book class represents a created book object that contains mutator and getter
- * methods allowing the book object to be modified and have its contents
- * output to terminal or returned.
+ * Library class contains different genre ArrayLists alongside mutator
+ * and getter methods that aid in processing of books into their adequate
+ * genre ArrayLists, that can be later gotten and utilised in searching
+ * method to find books with matching titles.
  *
  * @author Maksim Strelkov
  * - no copyright
